@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     const patchRes = await fetch(pr.patch_url); // for public repos, no auth needed
     const patchText = await patchRes.text();
 
-    console.log("Patch content:\n", patchText.slice(0, 500)); // log first 500 chars
+    console.log("Patch content:\n", patchText.slice(0, 500)); //test: log first 500 chars
   }
 
   return NextResponse.json({ ok: true });
