@@ -6,7 +6,7 @@ const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY ? process.env.GEM
 export async function reviewCode(fileContent: string): Promise<string> {
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.5-flash",
       contents: fileContent,
       config: {
         systemInstruction: `You are a senior software engineer reviewing a pull request.
