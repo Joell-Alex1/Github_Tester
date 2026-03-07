@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   pull_number: prNumber,
   });
 
-  console.log("Changed files:");
+  console.log("Changed files in this PR:");
 
   for (const file of files) {
     console.log(file.filename);
