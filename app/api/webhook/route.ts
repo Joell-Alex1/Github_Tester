@@ -15,12 +15,25 @@ export async function POST(request: Request) {
   const repo = body.repository?.name;
   const prNumber = body.pull_request?.number;
   const pr = body.pull_request;
-
-    const octokit = await getInstallationOctokit(
+  
+  const octokit = await getInstallationOctokit(
       Number(process.env.INSTALLATION_ID)
     );
+
+  const { data: files } = await octokit.rest.pulls.listFiles({
+  owner: owner,
+  repo: repo,
+  pull_number: prNumber,
+  });
+
+  console.log("Changed files in this PR:");
+
+  for (const file of files) {
+    console.log(file.filename);
+  }
+
   
-    await addComment({
+  await addComment({
       octokit,
       owner: owner,
       repo: repo,
