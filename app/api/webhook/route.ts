@@ -49,6 +49,7 @@ export async function POST(request: Request) {
 
 // we need the full file content to give the ai more context, so we fetch it here. This does add an api call for each file, but it should be worth it for the improved reviews.
 console.log("Fetching:", owner, repo, file.filename);
+
   const response = await octokit.rest.repos.getContent({
     owner,
     repo,
