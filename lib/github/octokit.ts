@@ -1,8 +1,6 @@
 import fs from "fs";
 import { App } from "octokit";
-import dotenv from "dotenv";
 
-dotenv.config();
 const keyPath = process.env.GITHUB_PRIVATE_KEY!;
 const privateKey = fs.readFileSync(keyPath, "utf8");
 
