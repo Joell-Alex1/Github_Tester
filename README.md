@@ -28,6 +28,7 @@ GEMINI_API_KEY=...
 ### 2. Run the server locally
 
 ```bash
+We start the server
 npm run dev
 ```
 
