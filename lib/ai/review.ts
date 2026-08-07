@@ -1,13 +1,13 @@
 import { GoogleGenAI } from "@google/genai";
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-if (!GEMINI_API_KEY) {
-    throw new Error("GEMINI_API_KEY environment variable is not set.");
-}
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
-
 // this function takes the file from api/webhook/route.ts, sends it to the Gemini API with a system instruction to review the code changes and provide feedback. The response from the API is then returned as a string which will be posted as a comment on the pull request.
 export async function reviewCode(fileContent: string): Promise<string> {
+  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+  if (!GEMINI_API_KEY) {
+    throw new Error("GEMINI_API_KEY environment variable is not set.");
+  }
+  const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+
   try {
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
