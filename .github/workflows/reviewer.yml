@@ -14,3 +14,5 @@ jobs:
       - uses: Joell-Alex1/Github_Tester@v1
         with:
           gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
