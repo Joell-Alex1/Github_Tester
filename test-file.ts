@@ -21,3 +21,5 @@ async function main() {
 }
 
 main().catch(console.error);
+
+// trigger test for the v1 GitHub Action
