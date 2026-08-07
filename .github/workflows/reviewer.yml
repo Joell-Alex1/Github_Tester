@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: joellalex/Github_Tester@v1
+      - uses: Joell-Alex1/Github_Tester@v1
         with:
           gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
