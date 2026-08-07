@@ -22,4 +22,4 @@ async function main() {
 
 main().catch(console.error);
 
-// trigger test for the v1 GitHub Action (retry after GEMINI_API_KEY fix)
+// trigger test for the v1 GitHub Action (retry after GITHUB_TOKEN fix)
