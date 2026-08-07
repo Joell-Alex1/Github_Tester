@@ -1,0 +1,11 @@
+name: "AI Reviewer"
+description: "Reviews pull requests using Gemini AI"
+
+inputs:
+  gemini-api-key:
+    description: "Gemini API key"
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

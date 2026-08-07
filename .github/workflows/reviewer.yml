@@ -1,0 +1,16 @@
+name: "AI Review"
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: joellalex/Github_Tester@v1
+        with:
+          gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
