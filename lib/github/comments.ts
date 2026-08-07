@@ -1,8 +1,17 @@
 
-import { Octokit } from "octokit";
-
 type CommentParams = {
-    octokit: Octokit;
+    octokit: {
+        rest: {
+            issues: {
+                createComment: (params: {
+                    owner: string;
+                    repo: string;
+                    issue_number: number;
+                    body: string;
+                }) => Promise<unknown>;
+            };
+        };
+    };
     owner: string;
     repo: string;
     issue_number: number;
