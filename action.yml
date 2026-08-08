@@ -1,5 +1,10 @@
-name: "AI Reviewer"
+name: "Gemini PR Reviewer by Joell-Alex1"
 description: "Reviews pull requests using Gemini AI"
+author: "Joell-Alex1"
+
+branding:
+  icon: "eye"
+  color: "purple"
 
 inputs:
   gemini-api-key:
